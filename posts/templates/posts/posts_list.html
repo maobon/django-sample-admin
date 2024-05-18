@@ -1,0 +1,27 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+    People List
+{% endblock title %}
+
+{% block content %}
+    <section>
+        <h1>People List</h1>
+
+        {% if list %}
+            {% for person in list %}
+
+                <a href="{% url 'posts:post_page' param=person.slug %}">
+                    <h2>{{ person.name }}</h2>
+                </a>
+
+                <p>{{ person.age }}</p>
+                <p>This post created by {{ person.author }}</p>
+                <p>{{ person.created_time }}</p>
+
+            {% endfor %}
+        {% else %}
+            <p>There is no datas in database</p>
+        {% endif %}
+    </section>
+{% endblock content %}

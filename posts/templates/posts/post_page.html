@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+    {{ person.name }}
+{% endblock title %}
+
+{% block content %}
+    <section>
+
+        <img class="banner"
+             src="{{ person.banner.url }}"
+             alt="{{ person.name }}"/>
+
+        <h3>
+            {{ person.slug }}
+        </h3>
+
+        <h3>
+            {{ person.created_time }}
+        </h3>
+
+    </section>
+{% endblock content %}
